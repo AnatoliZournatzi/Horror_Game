@@ -21,6 +21,9 @@ namespace KeySystem
 
         private string interactableTag = "InteractiveObject";
 
+        private Color dotInactiveColor = new Color(255, 255, 255, 74);
+        private Color dotActiveColor = new Color(255, 0, 0, 74);
+
         private void Update()
         {
             RaycastHit hit;
@@ -60,13 +63,14 @@ namespace KeySystem
 
         void CrosshairChange(bool on)
         {
+
             if(on && !doOnce)
             {
-                crosshair.color = Color.red; 
+                crosshair.color = dotActiveColor; 
             }
             else
             {
-                crosshair.color = Color.white;
+                crosshair.color = dotInactiveColor;
                 isCrosshairActive = false;
             }
         }

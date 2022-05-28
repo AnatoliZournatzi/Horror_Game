@@ -15,7 +15,14 @@ namespace KeySystem
         private KeyItemController raycastedObject;
         [SerializeField] private KeyCode openDoorKey = KeyCode.E;
 
-        [SerializeField] private Image crosshair = null;
+        [SerializeField] private Image interactImage; //reference to the image object in the hierarchy
+        [SerializeField] private Sprite crosshairDot; //the sprite with the dot image
+        [SerializeField] private Sprite crosshairHand; //the sprite with the scary hand image
+
+        //used a Vector2 object which takes two float values (x,y) - Vector3 has 3 values (x,y,z)
+        private Vector2 crosshairHandIconSize = new Vector2(25, 27); //x in the width and y the height in this case
+        private Vector2 crosshairDotIconSize = new Vector2(8, 8);
+
         private bool isCrosshairActive;
         private bool doOnce;
 
@@ -63,14 +70,15 @@ namespace KeySystem
 
         void CrosshairChange(bool on)
         {
-
-            if(on && !doOnce)
+            if (on && !doOnce)
             {
-                crosshair.color = dotActiveColor; 
+                interactImage.rectTransform.sizeDelta = crosshairHandIconSize; //with this we transform the size of the hand image to be 25 x 25
+                interactImage.sprite = crosshairHand;
             }
             else
             {
-                crosshair.color = dotInactiveColor;
+                interactImage.rectTransform.sizeDelta = crosshairDotIconSize;
+                interactImage.sprite = crosshairDot;
                 isCrosshairActive = false;
             }
         }

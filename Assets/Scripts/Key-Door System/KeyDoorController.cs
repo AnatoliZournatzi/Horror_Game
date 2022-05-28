@@ -21,6 +21,10 @@ namespace KeySystem
         [SerializeField] private int waitTimer = 1;
         [SerializeField] private bool pauseInteraction = false;
 
+        [SerializeField] private bool isDoorOne = false;
+        [SerializeField] private bool isDoorTwo = false;
+        [SerializeField] private bool isDoorThree = false;
+
         private void Awake()
         {
             doorAnim = gameObject.GetComponent<Animator>(); //this is going to auto fill the animation so we dont need to look for or add that to the inspector
@@ -35,15 +39,15 @@ namespace KeySystem
 
         public void PlayAnimation()
         {
-            if (_keyInventory.hasKeyToRoomOne)
+            if (_keyInventory.hasKeyToRoomOne && isDoorOne)
             {
                 OpenDoor();
             }
-            else if (_keyInventory.hasKeyToRoomTwo)
+            else if (_keyInventory.hasKeyToRoomTwo && isDoorTwo)
             {
                 OpenDoor();
             }
-            else if (_keyInventory.hasKeyToRoomThree)
+            else if (_keyInventory.hasKeyToRoomThree && isDoorThree)
             {
                 OpenDoor();
             }
@@ -64,12 +68,7 @@ namespace KeySystem
                 doorOpen = true;
                 StartCoroutine(PauseDoorInteraction());
             }
-            /*else if (doorOpen && !pauseInteraction)
-            {
-                doorAnim.Play(closeAnimationName, 0, 0.0f);
-                doorOpen = false;
-                StartCoroutine(PauseDoorInteraction());
-            }*/
+            
         }
 
         IEnumerator showDoorLocked()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.003999526, g: 0.00021816434, b: 0.000000051757652, a: 1}
+  m_IndirectSpecularColor: {r: 0.003999533, g: 0.0002181649, b: 0.000000051757652, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13359,7 +13359,9 @@ MonoBehaviour:
     m_Bits: 64
   excludeLayerName: 
   openDoorKey: 101
-  crosshair: {fileID: 176299085}
+  interactImage: {fileID: 176299085}
+  crosshairDot: {fileID: 21300000, guid: f149b11066120e345b113236536782df, type: 3}
+  crosshairHand: {fileID: 21300000, guid: 2a0d176f2a1393c498997b853c133766, type: 3}
 --- !u!4 &931572919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
@@ -29674,6 +29676,9 @@ MonoBehaviour:
   _keyInventory: {fileID: 1728570138}
   waitTimer: 1
   pauseInteraction: 0
+  isDoorOne: 1
+  isDoorTwo: 0
+  isDoorThree: 0
 --- !u!114 &33367927881036007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29752,6 +29757,9 @@ MonoBehaviour:
   _keyInventory: {fileID: 1728570138}
   waitTimer: 1
   pauseInteraction: 0
+  isDoorOne: 0
+  isDoorTwo: 1
+  isDoorThree: 0
 --- !u!114 &33367928536388077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29830,6 +29838,9 @@ MonoBehaviour:
   _keyInventory: {fileID: 1728570138}
   waitTimer: 1
   pauseInteraction: 0
+  isDoorOne: 0
+  isDoorTwo: 0
+  isDoorThree: 1
 --- !u!114 &33367929228911284
 MonoBehaviour:
   m_ObjectHideFlags: 0

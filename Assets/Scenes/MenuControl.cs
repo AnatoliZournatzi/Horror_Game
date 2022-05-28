@@ -11,13 +11,13 @@ public class MenuControl : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
-    /*public void ButtonCredits()
+    public void ButtonCredits(int index)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(index);
     }
 
     public void ButtonQuit()
     {
         Application.Quit();
-    }*/
+    }
 }

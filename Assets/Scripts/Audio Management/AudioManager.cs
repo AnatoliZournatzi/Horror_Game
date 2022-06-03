@@ -19,11 +19,16 @@ public class AudioManager : MonoBehaviour
 
             s.source.volume = s.volume; //the volume
             s.source.pitch = s.pitch; //and the pitch get copied over there
+            s.source.loop = s.loop; // To loop the backround sound
 
 
         }
     }
 
+    void Start()
+    {
+        Play("Background");
+    }
    
     //The Play method plays a specific sound whenever called
     public void Play(string name) //we make this method public so that we can call it inside from other classes - name: the name of our sound

@@ -28852,6 +28852,7 @@ GameObject:
   - component: {fileID: 23870687157199713}
   - component: {fileID: 65913186744030137}
   - component: {fileID: 65257896707451933}
+  - component: {fileID: 65913186744030138}
   m_Layer: 0
   m_Name: RTChair_low
   m_TagString: Untagged
@@ -31506,6 +31507,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.47460073, y: 0.39859354, z: 0.3494407}
   m_Center: {x: 0.000000007450581, y: -0.25276792, z: -0.0012262166}
+--- !u!95 &65913186744030138
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810090430626013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e7e8f5cdab98f647bbe4b5f697fc1b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &65978297043084733
 BoxCollider:
   m_ObjectHideFlags: 0

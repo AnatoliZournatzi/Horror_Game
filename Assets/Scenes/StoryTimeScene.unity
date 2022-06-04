@@ -1388,7 +1388,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: In 2015 a woman named Eris was violently murdered in [hotelName] hotel.
+  m_text: In 2015 a woman named Eris was violently murdered in Cortez hotel.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: efabe387f83da104ca1df01e1b727b00, type: 2}
   m_sharedMaterial: {fileID: -8347789117261990586, guid: efabe387f83da104ca1df01e1b727b00, type: 2}

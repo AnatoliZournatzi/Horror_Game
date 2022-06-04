@@ -15,19 +15,25 @@ namespace KeySystem {
         [SerializeField] private bool doorRoomThree = false;
         [SerializeField] private bool keyToRoomThree = false;
 
+        
+
         [SerializeField] private TMP_Text showKeyClaimUI;
+        [SerializeField] private GameObject cubeTrigger; //the cube to trigger the first jumpscare
 
         [SerializeField] private KeyInventory _keyInventory = null;
 
         private KeyDoorController doorObject;
-
+        private TremblingLight tremblingLight;
         private MeshRenderer meshRenderer;
+
 
         private void Start()
         {
             meshRenderer = gameObject.GetComponent<MeshRenderer>();
             doorObject = GetComponent<KeyDoorController>(); //to address the script KeyDoorController that is going to be in the same object as the KeyItemController
             /*showKeyClaimUI = GetComponent<TMP_Text>(); --- This line of code makes the object to be thrown away and the showKeyClaimUI doesn't have any object*/
+            tremblingLight = GetComponent<TremblingLight>();
+            
         }
 
         //this method is going to let us interact with either a door or a key
@@ -46,6 +52,7 @@ namespace KeySystem {
                 meshRenderer.enabled = false;
 
                 StartCoroutine(showMessageUI("You found key to room 1"));
+                cubeTrigger.SetActive(true);
             }
 
             else if(doorRoomTwo)
@@ -90,6 +97,7 @@ namespace KeySystem {
             showKeyClaimUI.gameObject.SetActive(false);
         }
 
+       
     }
 
 }

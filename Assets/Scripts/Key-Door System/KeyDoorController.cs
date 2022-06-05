@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace KeySystem
 {
@@ -9,12 +10,15 @@ namespace KeySystem
         private Animator doorAnim;
         private bool doorOpen = false;
 
+        
+
         [Header("Animation Names")]
         [SerializeField] private string openAnimationName = null;
         //[SerializeField] private string closeAnimationName = "Close";
 
         [SerializeField] private int timeToShowUI = 1;
-        [SerializeField] private GameObject showDoorLockedUI = null;
+
+        [SerializeField] private TMP_Text showDoorIsLockedUI;
 
         [SerializeField] private KeyInventory _keyInventory = null;
 
@@ -54,7 +58,7 @@ namespace KeySystem
 
             else
             {
-                StartCoroutine(showDoorLocked());
+                StartCoroutine(showDoorIsLocked("It's locked..."));
                 FindObjectOfType<AudioManager>().Play("LockedDoor");
             }
         }
@@ -71,11 +75,16 @@ namespace KeySystem
             
         }
 
-        IEnumerator showDoorLocked()
+        IEnumerator showDoorIsLocked(string messageText)
         {
-            showDoorLockedUI.SetActive(true);
-            yield return new WaitForSeconds(timeToShowUI);
-            showDoorLockedUI.SetActive(false);
+            showDoorIsLockedUI.text = messageText;
+            showDoorIsLockedUI.gameObject.SetActive(true); //to set active an object that is not of type GameObject (in our situation it is TMP_Text) 
+                                                       //we need to put the nameOfTheObject.gameObject.SetActive(true);
+                                                       //i think this casts the object into its general type of GameObject and it can use its 
+                                                       //functions like setActive state etc.
+
+            yield return new WaitForSeconds(1.8f);
+            showDoorIsLockedUI.gameObject.SetActive(false);
         }
 
     }

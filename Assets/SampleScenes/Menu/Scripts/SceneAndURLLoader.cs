@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,4 +26,4 @@ public class SceneAndURLLoader : MonoBehaviour
 		Application.OpenURL(url);
 	}
 }
-
+*/

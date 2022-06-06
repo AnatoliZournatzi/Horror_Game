@@ -1942,7 +1942,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: I See No Evil
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a55fd7084f2df7408143f8afffb8698, type: 2}
   m_sharedMaterial: {fileID: 1139552823527937367, guid: 4a55fd7084f2df7408143f8afffb8698, type: 2}
@@ -1975,7 +1975,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

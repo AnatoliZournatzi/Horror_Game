@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0041896855, g: 0.00025169982, b: 0.00000051041167, a: 1}
+  m_IndirectSpecularColor: {r: 0.004189683, g: 0.00025169988, b: 0.00000051041167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -17214,6 +17214,12 @@ MonoBehaviour:
     pitch: 1.5
     loop: 0
     source: {fileID: 0}
+  - name: ChairSlide
+    clip: {fileID: 8300000, guid: ba6f32e8ca34a584e9c7d5af8f280536, type: 3}
+    volume: 0.8
+    pitch: 1.5
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &818628639
 Transform:
   m_ObjectHideFlags: 0
@@ -18360,7 +18366,7 @@ GameObject:
   - component: {fileID: 890867178}
   - component: {fileID: 890867177}
   m_Layer: 0
-  m_Name: EvilLaughTrigger
+  m_Name: VoiceTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18378,8 +18384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10b960f224118748bb38c42ddaf3afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laughAudioSource: {fileID: 894160176}
-  laughSound: {fileID: 8300000, guid: 2adb5793ae393184987847ef8c1914cf, type: 3}
+  voiceAudioSource: {fileID: 894160176}
+  voiceSound: {fileID: 8300000, guid: a2da86927e5e14848ac4e67a889e3f08, type: 3}
 --- !u!65 &890867178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18409,8 +18415,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890867176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5098, y: 1.5286, z: 40.85}
-  m_LocalScale: {x: 4.4920516, y: 2.0973, z: 1}
+  m_LocalPosition: {x: 5.4094, y: 1.5204, z: 36.81}
+  m_LocalScale: {x: 6.529406, y: 2.0809412, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 894160177}
@@ -18444,7 +18450,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2adb5793ae393184987847ef8c1914cf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a2da86927e5e14848ac4e67a889e3f08, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -18538,7 +18544,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894160175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.176, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19093,7 +19099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: 5.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19101,7 +19107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.58
+      value: 36.24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -43328,7 +43334,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810090430626013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0e7e8f5cdab98f647bbe4b5f697fc1b0, type: 2}
   m_CullingMode: 0

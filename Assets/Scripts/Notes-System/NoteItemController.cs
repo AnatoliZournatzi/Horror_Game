@@ -23,6 +23,7 @@ namespace NoteSystem {
         private Canvas childCanvas;
 
         private static int noteCounter = 0;
+        private bool noteGainFlag = true;
 
         void Start()
         {
@@ -41,8 +42,13 @@ namespace NoteSystem {
                 childCanvas.enabled = false; //make the text disappear
                 NoteText2D.text = NoteText3D.text;
 
-                noteCounter++;
-                notesFoundUI.text = "Notes Found: " + noteCounter + "/7";
+
+                if (noteGainFlag)
+                {
+                    noteCounter++;
+                    notesFoundUI.text = "Notes Found: " + noteCounter + "/7";
+                    noteGainFlag = false;
+                }
 
                 noteToScreen.gameObject.SetActive(true);
 
@@ -53,7 +59,12 @@ namespace NoteSystem {
                     jumpscareGirl.SetActive(true);
                     cubeTrigger.SetActive(true);
                 }
-
+                if (Input.GetKeyDown(quitNote))
+                {
+                    noteCounter++;
+                    notesFoundUI.text = "Notes Found: " + noteCounter + "/7";
+                    noteGainFlag = false;
+                }
             }
         }
 
@@ -61,8 +72,10 @@ namespace NoteSystem {
         {
             if (Input.GetKeyDown(quitNote))
             {
+          
                 noteToScreen.gameObject.SetActive(false);
                 FindObjectOfType<AudioManager>().Play("NotePick");
+                
             }
         }
 

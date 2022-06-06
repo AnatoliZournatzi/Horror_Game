@@ -51,7 +51,9 @@ namespace NoteSystem
 
                     if (Input.GetKeyDown(pickUpNote))
                     {
+
                         raycastedObject.ObjectInteraction();
+
                     }
                 }
             }

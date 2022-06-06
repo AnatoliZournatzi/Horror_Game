@@ -33,7 +33,7 @@ namespace KeySystem {
         //would have its own keyCounter (in different places in the memory) so we make it static so that many objects can 
         //alter its value in the same place in memory (they all share the same variable).
         //That way it can be incremented to match the number of keys found.
-
+        private bool keyGainFlag = true;
 
         private void Start()
         {
@@ -58,9 +58,13 @@ namespace KeySystem {
                 FindObjectOfType<AudioManager>().Play("PickUpKey");
                 /*gameObject.SetActive(false);*/
                 meshRenderer.enabled = false;
-                keyCounter++;
-
-                keysFoundUI.text = "Keys Found: " + keyCounter + "/3";
+                if (keyGainFlag)
+                {
+                    //Key Counter UI update
+                    keyCounter++;
+                    keysFoundUI.text = "Keys Found: " + keyCounter + "/3";
+                    keyGainFlag = false;
+                }
 
                 StartCoroutine(showMessageUI("You found key to room 1"));
                 cubeTrigger.SetActive(true);
@@ -81,9 +85,13 @@ namespace KeySystem {
                 FindObjectOfType<AudioManager>().Play("PickUpKey");
                 meshRenderer.enabled = false;
 
-                //Key Counter UI update
-                keyCounter++;
-                keysFoundUI.text = "Keys Found: " + keyCounter + "/3";
+                if (keyGainFlag)
+                {
+                    //Key Counter UI update
+                    keyCounter++;
+                    keysFoundUI.text = "Keys Found: " + keyCounter + "/3";
+                    keyGainFlag = false;
+                }
 
                 StartCoroutine(showMessageUI("You found key to room 2"));
                 /*gameObject.SetActive(false);*/
@@ -102,10 +110,13 @@ namespace KeySystem {
                 FindObjectOfType<AudioManager>().Play("PickUpKey");
                 meshRenderer.enabled = false;
 
-                //Key Counter UI update
-                keyCounter++;
-                keysFoundUI.text = "Keys Found: " + keyCounter + "/3";
-
+                if (keyGainFlag)
+                {
+                    //Key Counter UI update
+                    keyCounter++;
+                    keysFoundUI.text = "Keys Found: " + keyCounter + "/3";
+                    keyGainFlag = false;
+                }
                 StartCoroutine(showMessageUI("You found key to room 3"));
                 /*gameObject.SetActive(false);*/
             }

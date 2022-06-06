@@ -9,7 +9,7 @@ public class JumpTrigger : MonoBehaviour
 
     private Animator chairAnimation;
 
-    private bool hasPlayedAudio;
+    private bool hasPlayedAudio = false;
     [SerializeField] private GameObject chairFigure;
     [SerializeField] private GameObject cubeTrigger;
 
@@ -22,30 +22,32 @@ public class JumpTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player") && hasPlayedAudio == false)
         {
-            voiceAudioSource.PlayOneShot(voiceSound);
-            hasPlayedAudio = true;
-
-            if (hasPlayedAudio = false)
-            {
-                StartCoroutine(playChairAnimation());
-                StartCoroutine(destroyCube());
-            }
-
+            
+            StartCoroutine(playChairAnimation());
+            //StartCoroutine(destroyCube());
+           
         }
     }
     IEnumerator playChairAnimation()
     {
-        yield return new WaitForSeconds(5);
+        Debug.Log("Playing chair animation");
+        yield return new WaitForSeconds(1);
         chairAnimation.enabled = true;
         FindObjectOfType<AudioManager>().Play("ChairSlide");
         chairAnimation.Play("ChairAnimation", 0, 0.0f);
+        yield return new WaitForSeconds(1.5f);
+        voiceAudioSource.PlayOneShot(voiceSound);
+        hasPlayedAudio = true;
+        //yield return new WaitForSeconds(2);
+        //Destroy(cubeTrigger);
     }
 
     IEnumerator destroyCube()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2);
         Destroy(cubeTrigger);
     }
+
 
 
 }

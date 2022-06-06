@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.004189683, g: 0.00025169988, b: 0.00000051041167, a: 1}
+  m_IndirectSpecularColor: {r: 0.0041896855, g: 0.00025169982, b: 0.00000051041167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1815,7 +1815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80893104}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 8.24, y: 6.519865, z: 7.84}
+  m_LocalPosition: {x: 8.24, y: 6.519865, z: 11.79}
   m_LocalScale: {x: 1.4597949, y: 1.4597949, z: 1.4597949}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15257,7 +15257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726601340}
   m_LocalRotation: {x: -0, y: -0.9660171, z: -0, w: 0.25847805}
-  m_LocalPosition: {x: -4.298, y: -0.90400004, z: 7.006}
+  m_LocalPosition: {x: -4.2, y: -0.90400004, z: 10.85}
   m_LocalScale: {x: 0.03466018, y: 0.048, z: 0.023076}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18386,6 +18386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceAudioSource: {fileID: 894160176}
   voiceSound: {fileID: 8300000, guid: a2da86927e5e14848ac4e67a889e3f08, type: 3}
+  chairFigure: {fileID: 1810090430626013}
+  cubeTrigger: {fileID: 890867176}
 --- !u!65 &890867178
 BoxCollider:
   m_ObjectHideFlags: 0

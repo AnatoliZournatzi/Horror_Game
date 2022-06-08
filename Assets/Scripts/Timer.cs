@@ -8,31 +8,26 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public string LevelToLoad;
-    int countDownStartValue = 299;
+    int countDownStartValue = 479; //initialized the variable
     public Text timerUI;
 
-    // Start is called before the first frame update
+    //Use this for initialization
     void Start()
     {
         countDownTimer();
 
     }
-    void countDownTimer()
+    void countDownTimer() //** we call this method again after 1 sec,
+                          //so this condition will continuously call after 1sec unless the value is grater than 0
     {
         if (countDownStartValue > 0)
         {
-            TimeSpan spanTime = TimeSpan.FromSeconds(countDownStartValue);
-            timerUI.text = "Timer : " + spanTime.Minutes + " : " + spanTime.Seconds;
-            countDownStartValue--;
-            Invoke("countDownTimer", 1.0f);
+            TimeSpan spanTime = TimeSpan.FromSeconds(countDownStartValue); //initialize this time span span time variable from my counter seconds to minutes
+            timerUI.text = "Timer : " + spanTime.Minutes + " : " + spanTime.Seconds; //convert the counter as a timer text
+            countDownStartValue--; //decrease the value of this variable 
+            Invoke("countDownTimer", 1.0f); // Invoke our method after 1 sec **
         }
-        else
-        {
-
-            timerUI.text = "GameOver!";
-            
-
-        }
+        
     }
     
     // Update is called once per frame
@@ -40,7 +35,7 @@ public class Timer : MonoBehaviour
     {
         if (countDownStartValue <= 0)
         {
-            Application.LoadLevel(LevelToLoad);
+            Application.LoadLevel(LevelToLoad); //We load the GameOver Scene
         }
     }
 }

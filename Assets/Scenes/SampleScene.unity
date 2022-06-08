@@ -22323,7 +22323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9eaa597d824a5048b95565e2be3ad43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToLoad: ThankYouScene
+  LevelToLoad: GameOverScene
   timerUI: {fileID: 984453246}
 --- !u!114 &984453246
 MonoBehaviour:

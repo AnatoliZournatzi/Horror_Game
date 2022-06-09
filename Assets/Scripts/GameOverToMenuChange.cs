@@ -10,7 +10,7 @@ public class GameOverToMenuChange : MonoBehaviour
 {
     private void OnEnable()
     {
-        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
+        Application.Quit();
     }
 }
 

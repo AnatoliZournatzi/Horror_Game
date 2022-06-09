@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public string LevelToLoad;
-    int countDownStartValue = 5; //initialized the variable
+    int countDownStartValue = 599; //initialized the variable
     public Text timerUI;
 
     //Use this for initialization

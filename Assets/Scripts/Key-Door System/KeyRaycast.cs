@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//For interacting with specific objects from the game (in this script with doors and keys) we use raycast function which is a Physics function
+//which is a function that casts a ray to the scene and returns a boolean value (1 if something was found and 0 if not)
 namespace KeySystem
 {
     public class KeyRaycast : MonoBehaviour
@@ -12,7 +14,7 @@ namespace KeySystem
 
         [SerializeField] private string excludeLayerName = null;
 
-        private KeyItemController raycastedObject;
+        private KeyItemController raycastedObject; //we reference the KeyItemController script
         [SerializeField] private KeyCode openDoorKey = KeyCode.E;
 
         [SerializeField] private Image interactImage; //reference to the image object in the hierarchy
@@ -40,13 +42,13 @@ namespace KeySystem
 
             if (Physics.Raycast(transform.position, fwd, out hit, rayLength, mask))
             {
-                if(hit.collider.CompareTag(interactableTag))
+                if(hit.collider.CompareTag(interactableTag)) //compare the tag of the object that was casted with the tag of the object that we want to find
                 {
                     //we found something at this point
                     if (!doOnce)
                     {
                         raycastedObject = hit.collider.gameObject.GetComponent<KeyItemController>();
-                        CrosshairChange(true); 
+                        CrosshairChange(true); //this is where the crosshair changes image
                     }
 
                     isCrosshairActive = true; //we found a tag (whether we did something or not)

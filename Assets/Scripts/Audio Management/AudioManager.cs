@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 
+//This script is for the audio manager that is going to hold all of the sounds taking place in the game
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds; //array with different sounds where each one of them has some specific atttributes.
@@ -21,13 +22,12 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch; //and the pitch get copied over there
             s.source.loop = s.loop; // To loop the backround sound
 
-
         }
     }
 
     void Start()
     {
-        Play("Background");
+        Play("Background"); //the background sound is going to play from the start to the finish of the game
     }
    
     //The Play method plays a specific sound whenever called

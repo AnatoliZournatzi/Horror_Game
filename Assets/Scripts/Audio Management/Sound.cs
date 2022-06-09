@@ -4,6 +4,7 @@ using UnityEngine.Audio;
 using UnityEngine;
 
 [System.Serializable]
+//This script holds the attributes of each sound that is going to be inside the audio manager
 public class Sound
 { 
     public string name; //the name of the audio clip

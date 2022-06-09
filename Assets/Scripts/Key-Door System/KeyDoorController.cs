@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//This script is going to control the movement of the door
 namespace KeySystem
 {
     public class KeyDoorController : MonoBehaviour
@@ -45,7 +46,7 @@ namespace KeySystem
         {
             if (_keyInventory.hasKeyToRoomOne && isDoorOne)
             {
-                OpenDoor();
+                OpenDoor(); 
             }
             else if (_keyInventory.hasKeyToRoomTwo && isDoorTwo)
             {
